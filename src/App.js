@@ -20,15 +20,17 @@ class App extends Component {
       let sansSerif = []
       let serif = []
       let monospace = []
-      for(let i = 0 ; i< data.items.length; i++){
-        if (data.items[i].category === "sans-serif"){
-          sansSerif.push(data.items[i].family);
-        }
-        else if (data.items[i].category === "serif"){
-          serif.push(data.items[i].family);
-        }
-        else if (data.items[i].category === "monospace"){
-          monospace.push(data.items[i].family);
+      if(data){
+        for(let i = 0 ; i< data.items.length; i++){
+          if (data.items[i].category === "sans-serif"){
+            sansSerif.push(data.items[i].family);
+          }
+          else if (data.items[i].category === "serif"){
+            serif.push(data.items[i].family);
+          }
+          else if (data.items[i].category === "monospace"){
+            monospace.push(data.items[i].family);
+          }
         }
       }
       fontDict['sans-serif'] = sansSerif;
